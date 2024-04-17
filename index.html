@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Your Website Title</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Share Tech Mono", monospace;
+            color: #000;
+        }
+
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .areaTAFFE {
+            background-color: #EAF2F0;
+            /* Blue to Green */
+        }
+
+        .areaTech {
+            background-color: #5c685c;
+            /* Green to Yellow */
+        }
+
+        .areaArt {
+            background-color: #bbd4ce;
+            /* Yellow to Red */
+        }
+
+        .areaFood {
+            background-color: #679186;
+            /* Red to Cyan */
+        }
+
+        .areaFitness {
+            background-color: #264e70;
+            /* Cyan to Purple */
+        }
+
+        .areaEnvironment {
+            background-color: #fdebd3;
+            /* Purple to Grey */
+        }
+
+        .areaContact {
+            background-color: #f9b4ab;
+            /* Grey to Blue */
+        }
+
+        .navTitle {
+            color: black;
+            font-weight: 600;
+            font-size: 40px;
+
+        }
+
+        .sectionTitle {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+            color: black;
+            font-weight: 600;
+            font-size: 40px;
+        }
+
+        nav {
+            text-align: center;
+            color: whitesmoke;
+            padding: 10px;
+            font-size: x-large;
+            background: linear-gradient(to bottom, white, #EAF2F0);
+            /* Blue to Green */
+        }
+
+        nav hr {
+            height: 3px;
+            margin: 0 20% 0 20%;
+            border-radius: 2px;
+        }
+
+        .underscore {
+            animation: blinker .75s linear infinite;
+        }
+
+        .sectionTitle a:link {
+            color: black;
+        }
+
+        /* visited link */
+        .sectionTitle a:visited {
+            color: black;
+        }
+
+        /* mouse over link */
+        .sectionTitle a:hover {
+            color: black;
+        }
+
+        /* selected link */
+        .sectionTitle a:active {
+            color: black;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>Welcome! <a href="#join"> Join The TAFFE Team!</a>
+        <hr />
+        <span class="navTitle" id="home">TAFFE</span>
+    </nav>
+    <div class="section areaTAFFE">
+        <h1>TAFFE</h1>
+    </div>
+    <div class="section areaTech">
+        <h1>Tech</h1>
+    </div>
+    <div class="section areaArt">
+        <h1>Art</h1>
+    </div>
+    <div class="section areaFood">
+        <h1>Food</h1>
+    </div>
+    <div class="section areaFitness">
+        <h1>Fitness</h1>
+    </div>
+    <div class="section areaEnvironment" id="Env">
+        <h1>Environment</h1>
+    </div>
+    <div class="section areaContact" id="join">
+        <h1>Contact</h1>
+    </div>
+    <div class="sectionTitle" id="sectionTitle">~<a href="">T</a><a href="">A</a><a href="">F</a><a href="">F</a><a
+            href="#Env">E</a>:><span class="underscore">_</span></div>
+
+    <script>
+        // Listen for scroll events on the window
+        window.addEventListener('scroll', function () {
+            // Select all sections
+            var sections = document.querySelectorAll('.section');
+            // Define section titles
+            var titles = ["Intro", "Tech", "Art", "Food", "Fitness", "Env.", "Contact"];
+
+            // Initialize variables for the currently active section index and its top position
+            var currentSectionIndex = 0;
+            var currentSectionTop = sections[0].getBoundingClientRect().top;
+
+            // Loop through each section to find the one closest to the top of the viewport
+            for (var i = 1; i < sections.length; i++) {
+                // Calculate the absolute top difference between the section and the viewport
+                var topDifference = Math.abs(sections[i].getBoundingClientRect().top);
+                // If the top difference is smaller than the current smallest difference, update the current section index and top position
+                if (topDifference < Math.abs(currentSectionTop)) {
+                    currentSectionTop = sections[i].getBoundingClientRect().top;
+                    currentSectionIndex = i;
+                }
+            }
+
+            // Get the section title with underscore
+            var sectionTitleWithUnderscore = '~<a href="">T</a><a href="">A</a><a href="">F</a><a href="">F</a><a href = "#Env">E</a >:> ' + titles[currentSectionIndex] + '<span class="underscore">_</span>';
+
+            // Update the section title on the bottom left with the title of the currently active section including underscore
+            document.getElementById('sectionTitle').innerHTML = sectionTitleWithUnderscore;
+        });
+    </script>
+
+
+
+</body>
+
+</html>
