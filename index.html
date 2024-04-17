@@ -7,20 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css" />
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <title>Your Website Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">    <title>Your Website Title</title>
     <style>
         body {
             margin: 0;
-            font-family: "Share Tech Mono", monospace;
+            font-family: "Roboto", sans-serif;
             color: #000;
         }
 
-        .section {
-            height: 100vh;
+        .area {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
         }
 
         .areaTAFFE {
@@ -62,25 +60,24 @@
             color: black;
             font-weight: 600;
             font-size: 40px;
+            font-family: "Share Tech Mono", monospace;
 
-        }
-
-        .sectionTitle {
-            position: fixed;
-            bottom: 10px;
-            left: 20px;
-            color: black;
-            font-weight: 600;
-            font-size: 40px;
         }
 
         nav {
+            font-family: "Share Tech Mono", monospace;
             text-align: center;
-            color: whitesmoke;
+            color: rgb(55, 55, 55);
             padding: 10px;
             font-size: x-large;
             background: linear-gradient(to bottom, white, #EAF2F0);
             /* Blue to Green */
+        }
+
+        @media screen and (max-width: 768px) {
+            nav {
+                font-size: x-large;
+            }
         }
 
         nav hr {
@@ -88,27 +85,43 @@
             margin: 0 20% 0 20%;
             border-radius: 2px;
         }
+        
+        .areaTitle {
+            position: fixed;
+            bottom: 10px;
+            left: 20px;
+            color: black;
+            font-weight: 600;
+            font-size: 40px;
+            font-family: "Share Tech Mono", monospace;
+        }
+
+        @media screen and (max-width: 768px) {
+            .areaTitle {
+                font-size: 28px;
+            }
+        }
 
         .underscore {
             animation: blinker .75s linear infinite;
         }
 
-        .sectionTitle a:link {
+        .areaTitle a:link {
             color: black;
         }
 
         /* visited link */
-        .sectionTitle a:visited {
+        .areaTitle a:visited {
             color: black;
         }
 
         /* mouse over link */
-        .sectionTitle a:hover {
+        .areaTitle a:hover {
             color: black;
         }
 
         /* selected link */
-        .sectionTitle a:active {
+        .areaTitle a:active {
             color: black;
         }
 
@@ -125,61 +138,105 @@
         <hr />
         <span class="navTitle" id="home">TAFFE</span>
     </nav>
-    <div class="section areaTAFFE">
-        <h1>TAFFE</h1>
+
+
+<section class="hero area areaTAFFE is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="section areaTech">
-        <h1>Tech</h1>
+</section>
+
+
+<section class="hero area areaTech is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="section areaArt">
-        <h1>Art</h1>
+</section>
+    
+<section class="hero area areaArt is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="section areaFood">
-        <h1>Food</h1>
+</section>
+
+<section class="hero area areaFood is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="section areaFitness">
-        <h1>Fitness</h1>
+</section>
+
+<section class="hero area areaFitness is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="section areaEnvironment" id="Env">
-        <h1>Environment</h1>
+</section>
+<section class="hero area areaEnvironment is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="section areaContact" id="join">
-        <h1>Contact</h1>
+</section>
+
+<section class="hero area areaContact is-fullheight">
+    <div class="hero-body">
+        <div class="">
+            <p class="title">Fullheight hero</p>
+            <p class="subtitle">Fullheight subtitle</p>
+        </div>
     </div>
-    <div class="sectionTitle" id="sectionTitle">~<a href="">T</a><a href="">A</a><a href="">F</a><a href="">F</a><a
+</section>
+
+    <div class="areaTitle" id="areaTitle">~<a href="">T</a><a href="">A</a><a href="">F</a><a href="">F</a><a
             href="#Env">E</a>:><span class="underscore">_</span></div>
+
 
     <script>
         // Listen for scroll events on the window
         window.addEventListener('scroll', function () {
             // Select all sections
-            var sections = document.querySelectorAll('.section');
+            var area = document.querySelectorAll('.area');
             // Define section titles
             var titles = ["Intro", "Tech", "Art", "Food", "Fitness", "Env.", "Contact"];
 
             // Initialize variables for the currently active section index and its top position
-            var currentSectionIndex = 0;
-            var currentSectionTop = sections[0].getBoundingClientRect().top;
+            var currentAreaIndex = 0;
+            var currentAreaTop = area[0].getBoundingClientRect().top;
 
-            // Loop through each section to find the one closest to the top of the viewport
-            for (var i = 1; i < sections.length; i++) {
-                // Calculate the absolute top difference between the section and the viewport
-                var topDifference = Math.abs(sections[i].getBoundingClientRect().top);
-                // If the top difference is smaller than the current smallest difference, update the current section index and top position
-                if (topDifference < Math.abs(currentSectionTop)) {
-                    currentSectionTop = sections[i].getBoundingClientRect().top;
-                    currentSectionIndex = i;
+            // Loop through each area to find the one closest to the top of the viewport
+            for (var i = 1; i < area.length; i++) {
+                // Calculate the absolute top difference between the area and the viewport
+                var topDifference = Math.abs(area[i].getBoundingClientRect().top);
+                // If the top difference is smaller than the current smallest difference, update the current area index and top position
+                if (topDifference < Math.abs(currentAreaTop)) {
+                    currentAreaTop = area[i].getBoundingClientRect().top;
+                    currentAreaIndex = i;
                 }
             }
 
-            // Get the section title with underscore
-            var sectionTitleWithUnderscore = '~<a href="">T</a><a href="">A</a><a href="">F</a><a href="">F</a><a href = "#Env">E</a >:> ' + titles[currentSectionIndex] + '<span class="underscore">_</span>';
+            // Get the area title with underscore
+            var areaTitleWithUnderscore = '~<a href="">T</a><a href="">A</a><a href="">F</a><a href="">F</a><a href = "#Env">E</a >:> ' + titles[currentAreaIndex] + '<span class="underscore">_</span>';
 
-            // Update the section title on the bottom left with the title of the currently active section including underscore
-            document.getElementById('sectionTitle').innerHTML = sectionTitleWithUnderscore;
+            // Update the area title on the bottom left with the title of the currently active area including underscore
+            document.getElementById('areaTitle').innerHTML = areaTitleWithUnderscore;
         });
     </script>
-
 
 
 </body>
